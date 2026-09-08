@@ -5,7 +5,8 @@ from datetime import datetime
 
 st.set_page_config(page_title="Gestor de Finanças Express", page_icon="💰", layout="centered")
 
-FILE_PATH = "financas.csv"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_PATH = os.path.join(BASE_DIR, "financas.csv")
 
 def carregar_dados():
     if not os.path.exists(FILE_PATH) or os.path.getsize(FILE_PATH) == 0:
